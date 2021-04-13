@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-material-ui',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    'gatsby-plugin-provide-react',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

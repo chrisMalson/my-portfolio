@@ -1,10 +1,17 @@
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors'
+
+import me_bg from '../images/me_bg.png';
 
 const useStyles = makeStyles({
   background: {
     alignItems: 'center',
-    backgroundColor: 'hotpink',
+    backgroundImage: `linear-gradient(
+      #dddb,
+      #ddd
+    ), url(${me_bg})`,
+    backgroundSize: 'cover',
     display: 'flex',
     flexDirection: 'column',
     height: '100vh',

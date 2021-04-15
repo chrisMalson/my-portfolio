@@ -15,6 +15,6 @@ const IndexPage = () => (
     <Works />
     <Contact />
   </Layout>
-)
+);
 
 export default IndexPage;

@@ -3,12 +3,16 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import ContactButton from './ContactButton';
 import NavBar from './NavBar';
-import Header from './Header';
+import hero_bg from '../images/hero_bg.png';
 
 const useStyles = makeStyles(theme => ({
   background: {
     alignItems: 'center',
-    backgroundColor: theme.palette.primary.main,
+    backgroundImage: `linear-gradient(
+        ${theme.palette.primary.main}bb,
+        ${theme.palette.primary.main}
+      ), url(${hero_bg})`,
+    backgroundSize: 'cover',
     color: theme.palette.common.white,
     display: 'flex',
     flexDirection: 'column',

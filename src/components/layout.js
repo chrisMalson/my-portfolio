@@ -39,16 +39,14 @@ const Layout = ({ children }) => {
   const [yPos, setYPos] = useState(0);
 
   useEffect(() => {
-    window.onscroll = () => {
-      setYPos(window.pageYOffset);
-    };
+    window.onscroll = () => setYPos(window.pageYOffset);
   }, []);
 
   const { pageWrapper, footer } = useStyles();
 
   return (
     <>
-      {yPos > window.innerHeight && <Header />}
+      {yPos > window.innerHeight - 1 && <Header />}
       <div className={pageWrapper}>
         <main>{children}</main>
         {/* <footer className={footer}>

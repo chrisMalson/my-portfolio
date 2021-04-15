@@ -2,11 +2,16 @@ import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ContactButton from './ContactButton';
+import contact_bg from '../images/contact_bg.png';
 
 const useStyles = makeStyles(theme => ({
   background: {
     alignItems: 'center',
-    backgroundColor: theme.palette.primary.main,
+    backgroundImage: `linear-gradient(
+      ${theme.palette.primary.main}bb,
+      ${theme.palette.primary.main}
+    ), url(${contact_bg})`,
+    backgroundSize: 'cover',
     color: theme.palette.common.white,
     display: 'flex',
     flexDirection: 'column',

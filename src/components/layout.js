@@ -26,6 +26,8 @@ const useStyles = makeStyles({
 
 const Layout = ({ children }) => {
 
+
+
   const { site } = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -37,16 +39,25 @@ const Layout = ({ children }) => {
   `);
 
   const [yPos, setYPos] = useState(0);
+  const [headerVisible, setHeaderVisible] = useState(false);
 
   useEffect(() => {
     window.onscroll = () => setYPos(window.pageYOffset);
   }, []);
 
+  useEffect(() => {
+    if (yPos > window.innerHeight - 1) {
+      setHeaderVisible(true);
+    } else {
+      setHeaderVisible(false);
+    }
+  }, [yPos])
+
   const { pageWrapper, footer } = useStyles();
 
   return (
     <>
-      {yPos > window.innerHeight - 1 && <Header />}
+      {headerVisible && <Header />}
       <div className={pageWrapper}>
         <main>{children}</main>
         {/* <footer className={footer}>

@@ -1,6 +1,5 @@
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { blue } from '@material-ui/core/colors'
 
 import me_bg from '../images/me_bg.png';
 

@@ -2,8 +2,8 @@ import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ContactButton from './ContactButton';
-import NavBar from './NavBar';
 import hero_bg from '../images/hero_bg.png';
+import NavBar from './NavBar';
 
 const useStyles = makeStyles(theme => ({
   background: {

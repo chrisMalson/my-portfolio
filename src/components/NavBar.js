@@ -1,4 +1,3 @@
-import { Link as GLink } from "gatsby";
 import { Button, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 

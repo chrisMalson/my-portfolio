@@ -1,6 +1,6 @@
 import { Icon, List, ListItem, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import { blue } from '@material-ui/core/colors';
+import { makeStyles } from '@material-ui/core/styles';
 import CodeIcon from '@material-ui/icons/Code';
 
 import site_bg from '../images/site_bg.png';

@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 import { makeStyles } from '@material-ui/core/styles';
 
 import NavBar from './NavBar';

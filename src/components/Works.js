@@ -1,10 +1,9 @@
 import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { blue } from '@material-ui/core/colors';
 
-import git_bg from '../images/git_bg.png';
-import card_oatd from '../images/card_oatd.png';
 import card_agoc from '../images/card_agoc.png';
+import card_oatd from '../images/card_oatd.png';
+import git_bg from '../images/git_bg.png';
 
 const useStyles = makeStyles({
   background: {

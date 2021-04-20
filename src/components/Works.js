@@ -1,11 +1,11 @@
-import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Card, CardContent, CardMedia, Typography, useMediaQuery } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import card_agoc from '../images/card_agoc.png';
 import card_oatd from '../images/card_oatd.png';
 import git_bg from '../images/git_bg.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   background: {
     alignItems: 'center',
     backgroundImage: `linear-gradient(
@@ -13,27 +13,41 @@ const useStyles = makeStyles({
       #ddd
     ), url(${git_bg})`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
-    height: '100vh',
+    minHeight: '100vh',
   },
   card: {
-    maxWidth: '30%'
+    margin: '1em 0',
+    maxWidth: '300px'
   },
   cardList: {
     display: 'flex',
+    '@media (max-width: 700px)': {
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
     justifyContent: 'space-around',
-    width: '80%'
-  }
-});
+    width: '90%'
+  },
+  title: {
+    textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '2em'
+    }
+  },
+}));
 
 const Works = () => {
-  const { background, card, cardList } = useStyles();
+  const { background, card, cardList, title } = useStyles();
+  const theme = useTheme();
 
   return (
     <div id="works" className={background}>
-      <Typography variant="h1">what have I done?</Typography>
+      {useMediaQuery(theme.breakpoints.down('xs')) && <div style={{ height: '3em' }}></div>}
+      <Typography className={title} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>what have I done?</Typography>
       <div className={cardList}>
         <Card className={card}>
           <CardContent>

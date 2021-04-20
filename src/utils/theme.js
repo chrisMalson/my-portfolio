@@ -2,10 +2,18 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { blue, orange } from '@material-ui/core/colors';
 
 const theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      sm: 700
+    }
+  },
   typography: {
     button: {
       textTransform: 'none'
-    }
+    },
+    fontFamily: [
+      'Rubik'
+    ],
   },
   palette: {
     primary: {

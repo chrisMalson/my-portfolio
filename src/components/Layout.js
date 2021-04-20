@@ -11,10 +11,10 @@ const Layout = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (yPos > window.innerHeight - 1) {
-      setHeaderVisible(true);
-    } else {
+    if (yPos <= window.innerHeight - 1) {
       setHeaderVisible(false);
+    } else {
+      setHeaderVisible(true);
     }
   }, [yPos])
 

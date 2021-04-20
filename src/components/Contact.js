@@ -1,5 +1,5 @@
-import { Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Typography, useMediaQuery } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import ContactButton from './ContactButton';
 import contact_bg from '../images/contact_bg.png';
@@ -16,18 +16,28 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
-    height: '100vh',
+    minHeight: '100vh',
+  },
+  text: {
+    textAlign: 'center'
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
   }
 }));
 
 const Contact = () => {
-  const { background } = useStyles();
+  const { background, text, buttonContainer } = useStyles();
+  const theme = useTheme();
 
   return (
     <div className={background}>
-      <Typography variant="h1">that's pretty much it</Typography>
-      <div>
-        <Typography variant="h6">so if you wanna chat, here's how:</Typography>
+      <Typography className={text} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>that's pretty much it</Typography>
+      <div className={buttonContainer}>
+        <Typography className={text} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h6' : 'body1'}>if you want some site work done, then</Typography>
         <ContactButton />
       </div>
     </div>

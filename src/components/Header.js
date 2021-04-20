@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     padding: `1.45rem 1.0875rem`,
+    [theme.breakpoints.down('xs')]: {
+      padding: '0.75rem'
+    }
   },
   text: {
     color: `white`,

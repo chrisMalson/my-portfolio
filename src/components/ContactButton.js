@@ -13,7 +13,7 @@ const ContactButton = () => {
   return (
     <Button className={text} variant="contained" color="secondary">
       <Typography variant="h3">
-        click to hire me
+        let's talk
       </Typography>
     </Button>
   );

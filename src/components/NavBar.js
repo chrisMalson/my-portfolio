@@ -5,10 +5,23 @@ const useStyles = makeStyles(theme => ({
   nav: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '50%'
+    width: '90%',
+    [theme.breakpoints.up('sm')]: {
+      width: '75%'
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '60%'
+    }
   },
   text: {
-    color: theme.palette.common.white
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.25rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5rem'
+    },
+    color: theme.palette.common.white,
+    textAlign: 'center'
   }
 }));
 
@@ -18,15 +31,15 @@ const NavBar = () => {
   return (
     <div className={nav}>
       <Button href="#about" variant="text">
-        <Typography className={text} variant="h5">who am I?</Typography>
+        <Typography className={text}>who am I?</Typography>
       </Button>
       <Divider orientation="vertical" />
       <Button href="#skills" variant="text">
-        <Typography className={text} variant="h5">what do I do?</Typography>
+        <Typography className={text}>what do I do?</Typography>
       </Button>
       <Divider orientation="vertical" />
       <Button href="#works" variant="text">
-        <Typography className={text} variant="h5">what have I done?</Typography>
+        <Typography className={text}>what have I done?</Typography>
       </Button>
     </div>
   );

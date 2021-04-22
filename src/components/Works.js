@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   },
   cardList: {
     display: 'flex',
-    '@media (max-width: 700px)': {
+    [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
       alignItems: 'center'
     },

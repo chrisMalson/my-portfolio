@@ -3,6 +3,9 @@ module.exports = {
     title: `Chris Malson - Developer`,
     description: `Chris Malson - UI Developer`,
     author: `Chris Malson`,
+    email: `chris@malson.dev`,
+    linkedin: `https://www.linkedin.com/in/chris-malson`,
+    github: `https://github.com/chrisMalson/`
   },
   plugins: [
     'gatsby-plugin-material-ui',

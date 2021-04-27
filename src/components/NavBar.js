@@ -27,18 +27,20 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = () => {
   const { nav, text } = useStyles();
+
+  const handleNav = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   
   return (
     <div className={nav}>
-      <Button href="#about" variant="text">
+      <Button onClick={() => handleNav('about')} variant="text">
         <Typography className={text}>who am I?</Typography>
       </Button>
       <Divider orientation="vertical" />
-      <Button href="#skills" variant="text">
+      <Button onClick={() => handleNav('skills')} variant="text">
         <Typography className={text}>what do I do?</Typography>
       </Button>
       <Divider orientation="vertical" />
-      <Button href="#works" variant="text">
+      <Button onClick={() => handleNav('works')} variant="text">
         <Typography className={text}>what have I done?</Typography>
       </Button>
     </div>

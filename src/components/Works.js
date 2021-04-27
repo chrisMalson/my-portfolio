@@ -24,7 +24,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     margin: '1em 0',
-    maxWidth: '300px'
+    minWidth: '300px',
+    maxWidth: '30%'
   },
   cardList: {
     display: 'flex',
@@ -40,9 +41,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     textAlign: 'center',
-    [theme.breakpoints.down('xs')]: {
-      paddingTop: '2em'
-    }
+    paddingTop: '2em'
   },
 }));
 

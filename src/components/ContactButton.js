@@ -54,10 +54,10 @@ const ContactButton = () => {
           </Typography>
         </DialogContent>
         <DialogActions>
-          <Button href={linkedin}>
+          <Button target="_blank" href={linkedin}>
             LinkedIn
           </Button>
-          <Button href={github}>
+          <Button target="_blank" href={github}>
             GitHub
           </Button>
         </DialogActions>

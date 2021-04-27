@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center'
   },
   listText: {
+    paddingLeft: '0.5rem',
     [theme.breakpoints.up('sm')]: {
       fontSize: '1.25rem'
     }

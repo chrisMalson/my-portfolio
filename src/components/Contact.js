@@ -37,7 +37,7 @@ const Contact = () => {
     <div className={background}>
       <Typography className={text} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>that's pretty much it</Typography>
       <div className={buttonContainer}>
-        <Typography className={text} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h6' : 'body1'}>if you want some site work done, then</Typography>
+        <Typography gutterBottom className={text} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h6' : 'body1'}>if you want some site work done, then</Typography>
         <ContactButton />
       </div>
     </div>

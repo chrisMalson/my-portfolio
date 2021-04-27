@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography, useMediaQuery } from '@material-ui/core';
+import { Button, Card, CardActions, CardContent, CardMedia, Typography, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import card_agoc from '../images/card_agoc.png';
@@ -20,6 +20,9 @@ const useStyles = makeStyles(theme => ({
     minHeight: '100vh',
   },
   card: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     margin: '1em 0',
     maxWidth: '300px'
   },
@@ -32,6 +35,9 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     width: '90%'
   },
+  image: {
+    border: `1px solid ${theme.palette.common.black}`
+  },
   title: {
     textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
@@ -41,7 +47,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Works = () => {
-  const { background, card, cardList, title } = useStyles();
+  const { background, card, cardList, image, title } = useStyles();
   const theme = useTheme();
 
   return (
@@ -51,8 +57,9 @@ const Works = () => {
       <div className={cardList}>
         <Card className={card}>
           <CardContent>
-            <Typography variant="h6">A Game of Chance</Typography>
+            <Typography gutterBottom variant="h6">A Game of Chance</Typography>
             <CardMedia
+              className={image}
               component="img"
               alt="A Game of Chance"
               height="200"
@@ -60,11 +67,15 @@ const Works = () => {
             />
             <Typography variant="body1">A backlog management and random game selection app. Made in React, using Material-UI and Next.js</Typography>
           </CardContent>
+          <CardActions>
+            <Button fullWidth variant="outlined" target="_blank" href="https://agoc.malson.dev">VISIT SITE</Button>
+          </CardActions>
         </Card>
         <Card className={card}>
           <CardContent>
-            <Typography variant="h6">Oasis at the Dawn</Typography>
+            <Typography gutterBottom variant="h6">Oasis at the Dawn</Typography>
             <CardMedia
+              className={image}
               component="img"
               alt="Oasis at the Dawn"
               height="200"
@@ -72,6 +83,9 @@ const Works = () => {
             />
             <Typography variant="body1">A landing page designed for a condo rental in Galveston, TX. Made in React, styled with Material-UI</Typography>
           </CardContent>
+          <CardActions>
+            <Button fullWidth variant="outlined" target="_blank" href="https://oasisatthedawn.com">VISIT SITE</Button>
+          </CardActions>
         </Card>
       </div>
     </div>

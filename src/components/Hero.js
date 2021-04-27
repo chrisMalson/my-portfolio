@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Hero = () => {
+const Hero = ({ headerVisible }) => {
   const { background } = useStyles();
   const theme = useTheme();
 
@@ -31,7 +31,7 @@ const Hero = () => {
       <div />
       <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>Chris Malson</Typography>
       <ContactButton />
-      <NavBar />
+      {!headerVisible ? <NavBar /> : <div></div>}
     </div>
   );
 };

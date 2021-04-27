@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { cloneElement, useState, useEffect } from 'react';
 
 import Header from "./Header"
 
@@ -18,11 +18,14 @@ const Layout = ({ children }) => {
     }
   }, [yPos])
 
+
   return (
     <>
       {headerVisible && <Header />}
       <div>
-        <main>{children}</main>
+        <main>{
+          children.map(child => cloneElement(child, { headerVisible }))
+        }</main>
       </div>
     </>
   );

@@ -2,6 +2,19 @@ import { Button, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
+  button: {
+    '&:hover': {
+      borderBottom: `2px solid ${theme.palette.secondary.main}`
+    },
+    '&:focus': {
+      borderBottom: `0px solid ${theme.palette.secondary.main}`,
+      // transition: 'border-bottom 2s',
+    },
+    '&:active': {
+      borderBottom: `4px solid ${theme.palette.secondary.main}`,
+      // transition: 'border-bottom 1s',
+    }
+  },
   nav: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -26,21 +39,42 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavBar = () => {
-  const { nav, text } = useStyles();
+  const { button, nav, text } = useStyles();
 
   const handleNav = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   
   return (
     <div className={nav}>
-      <Button onClick={() => handleNav('about')} variant="text">
+      <Button
+        className={button}
+        disableElevation
+        disableFocusRipple
+        disableRipple
+        onClick={() => handleNav('about')}
+        variant="text"
+      >
         <Typography className={text}>who am I?</Typography>
       </Button>
       <Divider orientation="vertical" />
-      <Button onClick={() => handleNav('skills')} variant="text">
+      <Button
+        className={button}
+        disableElevation
+        disableFocusRipple
+        disableRipple
+        onClick={() => handleNav('skills')}
+        variant="text"
+      >
         <Typography className={text}>what do I do?</Typography>
       </Button>
       <Divider orientation="vertical" />
-      <Button onClick={() => handleNav('works')} variant="text">
+      <Button
+        className={button}
+        disableElevation
+        disableFocusRipple
+        disableRipple
+        onClick={() => handleNav('works')}
+        variant="text"
+      >
         <Typography className={text}>what have I done?</Typography>
       </Button>
     </div>

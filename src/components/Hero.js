@@ -19,17 +19,23 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     minHeight: '100vh',
     justifyContent: 'space-around'
+  },
+  textContainer: {
+    textAlign: 'center'
   }
 }));
 
 const Hero = ({ headerVisible }) => {
-  const { background } = useStyles();
+  const { background, textContainer } = useStyles();
   const theme = useTheme();
 
   return (
-    <div className={background}>
+    <div id="hero" className={background}>
       <div />
-      <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>Chris Malson</Typography>
+      <div className={textContainer}>
+        <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>Chris Malson</Typography>
+        <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h3' : 'h5'}>a developer</Typography>
+      </div>
       <ContactButton />
       {!headerVisible ? <NavBar /> : <div></div>}
     </div>

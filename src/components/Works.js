@@ -1,9 +1,10 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography, useMediaQuery } from '@material-ui/core';
+import { Typography, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
+import github_bg from '../images/github_bg.png';
 import card_agoc from '../images/card_agoc.png';
 import card_oatd from '../images/card_oatd.png';
-import git_bg from '../images/git_bg.png';
+import ProjectCard from './ProjectCard';
 
 const useStyles = makeStyles(theme => ({
   background: {
@@ -11,42 +12,27 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `linear-gradient(
       #dddb,
       #ddd
-    ), url(${git_bg})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    ), url(${github_bg})`,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
     minHeight: '100vh',
   },
-  card: {
+  cardList: {
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    margin: '1em 0',
-    minWidth: '300px',
-    maxWidth: '30%'
-  },
-  cardList: {
-    display: 'flex',
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
-      alignItems: 'center'
-    },
     justifyContent: 'space-around',
     width: '90%'
   },
-  image: {
-    border: `1px solid ${theme.palette.common.black}`
-  },
   title: {
     textAlign: 'center',
-    paddingTop: '2em'
-  },
+    padding: '2em 0'
+  }
 }));
 
 const Works = () => {
-  const { background, card, cardList, image, title } = useStyles();
+  const { background, cardList, title } = useStyles();
   const theme = useTheme();
 
   return (
@@ -54,38 +40,20 @@ const Works = () => {
       {useMediaQuery(theme.breakpoints.down('xs')) && <div style={{ height: '3em' }}></div>}
       <Typography className={title} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>what have I done?</Typography>
       <div className={cardList}>
-        <Card className={card}>
-          <CardContent>
-            <Typography gutterBottom variant="h6">A Game of Chance</Typography>
-            <CardMedia
-              className={image}
-              component="img"
-              alt="A Game of Chance"
-              height="200"
-              image={card_agoc}
-            />
-            <Typography variant="body1">A backlog management and random game selection app. Made in React, using Material-UI and Next.js</Typography>
-          </CardContent>
-          <CardActions>
-            <Button fullWidth variant="outlined" target="_blank" href="https://agoc.malson.dev">VISIT SITE</Button>
-          </CardActions>
-        </Card>
-        <Card className={card}>
-          <CardContent>
-            <Typography gutterBottom variant="h6">Oasis at the Dawn</Typography>
-            <CardMedia
-              className={image}
-              component="img"
-              alt="Oasis at the Dawn"
-              height="200"
-              image={card_oatd}
-            />
-            <Typography variant="body1">A landing page designed for a condo rental in Galveston, TX. Made in React, styled with Material-UI</Typography>
-          </CardContent>
-          <CardActions>
-            <Button fullWidth variant="outlined" target="_blank" href="https://oasisatthedawn.com">VISIT SITE</Button>
-          </CardActions>
-        </Card>
+        <ProjectCard
+          name="A Game of Chance"
+          technologies={['React', 'Next.js', 'Material-UI', 'Firebase']}
+          imgSrc={card_agoc}
+          siteUrl="https://agoc.malson.dev/"
+          repoUrl="https://github.com/chrisMalson/a-game-of-chance"
+        />
+        <ProjectCard
+          name="Oasis at the Dawn"
+          technologies={['React', 'Material-UI']}
+          imgSrc={card_oatd}
+          siteUrl="https://oasisatthedawn.com"
+          repoUrl="https://github.com/chrisMalson/oasis-at-the-dawn"
+        />
       </div>
     </div>
   );

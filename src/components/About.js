@@ -25,8 +25,11 @@ const useStyles = makeStyles(theme => ({
     margin: '0 1.5em',
     transition: 'transform .1s',
     '&:hover': {
-      transform: 'scale(2)'
+      transform: 'scale(1.5)'
     }
+  },
+  iconContainer: {
+    paddingBottom: '4em'
   },
   info: {
     display: 'flex',
@@ -45,7 +48,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const About = () => {
-  const { background, description, icon, info, title } = useStyles();
+  const { background, description, icon, iconContainer, info, title } = useStyles();
   const theme = useTheme();
 
   const {
@@ -67,11 +70,20 @@ const About = () => {
 
   return (
     <div id="about" className={background}>
-      <Typography className={title} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>who am I?</Typography>
+      <Typography className={title} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>
+        who am I?
+      </Typography>
       <div className={info}>
-        <Typography className={description} variant="body1">an aspiring developer whose primary goal is to hone his craft and provide value to an increasingly online world.</Typography>
+        <Typography className={description} variant="body1">
+          <span style={{ paddingLeft: '3rem' }}>an aspiring developer whose primary goals are to:</span>
+          <ul>
+            <li>explore my innate curiosity of programming and development</li>
+            <li>challenge myself and hone my craft</li>
+            <li>provide value to an increasingly online world</li>
+          </ul>
+        </Typography>
         <ResumeButton />
-        <div>
+        <div className={iconContainer}>
           <SocialIcon className={icon} bgColor={theme.palette.primary.main} url={linkedin} />
           <SocialIcon className={icon} url={github} />
           <ContactButton mini />

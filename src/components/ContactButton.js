@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     transition: 'transform .1s',
     '&:hover': {
       cursor: 'pointer',
-      transform: 'scale(2)'
+      transform: 'scale(1.5)'
     }
   },
   text: {
@@ -63,10 +63,16 @@ const ContactButton = ({ mini, forFooter }) => {
         maxWidth='md'
       >
         <DialogTitle>
-          <Typography>I'd enjoy to hear from you!</Typography>
+          <Typography>I'm looking forward to hearing from you!</Typography>
         </DialogTitle>
         <DialogContent>
-          <ReactContactForm className={form} to="chris@malson.dev" />
+          <ReactContactForm
+            className={form}
+            to="chris@malson.dev"
+            titlePlaceholder='subject'
+            contentsPlaceholder='description'
+            buttonText='submit'
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>

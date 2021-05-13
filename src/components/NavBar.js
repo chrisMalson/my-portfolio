@@ -1,21 +1,21 @@
-import { Button, Divider, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Button, Divider, Link, Typography } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   button: {
+    borderBottom: `3px solid transparent`,
+    cursor: 'pointer',
     '&:hover': {
-      borderBottom: `2px solid ${theme.palette.secondary.main}`
+      borderColor: theme.palette.secondary.main,
+      transition: 'border-color 0.5s'
     },
-    '&:focus': {
-      borderBottom: `0px solid ${theme.palette.secondary.main}`,
-      // transition: 'border-bottom 2s',
-    },
-    '&:active': {
-      borderBottom: `4px solid ${theme.palette.secondary.main}`,
-      // transition: 'border-bottom 1s',
+    '& .touched': {
+      borderColor: 'transparent',
+      transition: 'border-color 0.5s'
     }
   },
   nav: {
+    alignItems: 'center',
     display: 'flex',
     justifyContent: 'space-between',
     width: '90%',
@@ -40,43 +40,38 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = () => {
   const { button, nav, text } = useStyles();
+  const theme = useTheme();
 
   const handleNav = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   
   return (
     <div className={nav}>
-      <Button
+      <Link
         className={button}
-        disableElevation
-        disableFocusRipple
-        disableRipple
         onClick={() => handleNav('about')}
-        variant="text"
+        onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
+        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}
       >
         <Typography className={text}>who am I?</Typography>
-      </Button>
+      </Link>
       <Divider orientation="vertical" />
-      <Button
+      <Link
         className={button}
-        disableElevation
-        disableFocusRipple
-        disableRipple
         onClick={() => handleNav('skills')}
-        variant="text"
+        onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
+        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}
       >
         <Typography className={text}>what do I do?</Typography>
-      </Button>
+      </Link>
       <Divider orientation="vertical" />
-      <Button
+      <Link
         className={button}
-        disableElevation
-        disableFocusRipple
-        disableRipple
         onClick={() => handleNav('works')}
-        variant="text"
+        onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
+        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}
       >
-        <Typography className={text}>what have I done?</Typography>
-      </Button>
+        <Typography className={text}>where have I been?</Typography>
+      </Link>
     </div>
   );
 };

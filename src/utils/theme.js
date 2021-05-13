@@ -14,15 +14,6 @@ const theme = createMuiTheme({
     fontFamily: [
       'Rubik'
     ],
-    h1: {
-      fontFamily: 'Rock Salt'
-    },
-    h2: {
-      fontFamily: 'Rock Salt'
-    },
-    h3: {
-      fontFamily: 'Rock Salt'
-    }
   },
   palette: {
     primary: {

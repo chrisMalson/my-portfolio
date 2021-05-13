@@ -17,11 +17,15 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-around',
     minHeight: '100vh',
+    paddingBottom: '4em'
   },
   cardList: {
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
+    [theme.breakpoints.up('sm')]: {
+      flexDirection: 'row'
+    },
     justifyContent: 'space-around',
     width: '90%'
   },
@@ -38,7 +42,7 @@ const Works = () => {
   return (
     <div id="works" className={background}>
       {useMediaQuery(theme.breakpoints.down('xs')) && <div style={{ height: '3em' }}></div>}
-      <Typography className={title} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>what have I done?</Typography>
+      <Typography className={title} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>where have I been?</Typography>
       <div className={cardList}>
         <ProjectCard
           name="A Game of Chance"
@@ -53,6 +57,7 @@ const Works = () => {
           imgSrc={card_oatd}
           siteUrl="https://oasisatthedawn.com"
           repoUrl="https://github.com/chrisMalson/oasis-at-the-dawn"
+          reversed
         />
       </div>
     </div>

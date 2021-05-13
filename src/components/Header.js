@@ -9,8 +9,8 @@ const useStyles = makeStyles(theme => ({
     left: '0',
     position: 'sticky',
     top: '0',
-    zIndex: '999'
-  },
+    zIndex: '999',
+  }, 
   inner: {
     alignItems: 'center',
     display: 'flex',
@@ -31,10 +31,21 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       alignSelf: 'flex-end',
       justifyContent: 'flex-end',
+      width: '90%'
+    },
+    '@media (min-width: 960px)': {
+      width: '80%'
+    },
+    '@media (min-width: 1280px)': {
       width: '60%'
     }
   },
   text: {
+    '&:hover': {
+      cursor: 'pointer',
+      color: theme.palette.secondary.main,
+      transition: 'color 0.5s'
+    },
     color: `${theme.palette.common.white}`,
     fontFamily: 'Rock Salt'
   },

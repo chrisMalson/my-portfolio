@@ -20,21 +20,24 @@ const useStyles = makeStyles(theme => ({
     minHeight: '100vh',
     justifyContent: 'space-around'
   },
+  name: {
+    fontFamily: 'Rock Salt'
+  },
   textContainer: {
     textAlign: 'center'
   }
 }));
 
 const Hero = ({ headerVisible }) => {
-  const { background, textContainer } = useStyles();
+  const { background, name, textContainer } = useStyles();
   const theme = useTheme();
 
   return (
     <div id="hero" className={background}>
       <div />
       <div className={textContainer}>
-        <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>Chris Malson</Typography>
-        <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h3' : 'h5'}>a developer</Typography>
+        <Typography className={name} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>Chris Malson</Typography>
+        <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h3' : 'h5'}>web developer</Typography>
       </div>
       <ContactButton />
       {!headerVisible ? <NavBar /> : <div></div>}

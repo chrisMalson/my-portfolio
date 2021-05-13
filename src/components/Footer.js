@@ -7,7 +7,7 @@ import ResumeButton from './ResumeButton';
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    background: theme.palette.primary.main,
+    background: theme.palette.grey[700],
   },
   inner: {
     alignItems: 'center',

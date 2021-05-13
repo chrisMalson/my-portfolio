@@ -14,9 +14,9 @@ const ResumeButton = ({ forFooter }) => {
   const { button } = useStyles();
 
   return (
-    <Button style={forFooter && { marginRight: '0' }} href={Resume} className={button} variant="contained" color={forFooter ? 'inherit' : 'primary'}>
+    <Button style={forFooter && { marginRight: '0' }} target="_blank" href={Resume} className={button} variant="contained" color={forFooter ? 'inherit' : 'primary'}>
       <Typography variant="h6">
-        {!forFooter && `here's my `}
+        {!forFooter && `check out my `}
         résumé
       </Typography>
     </Button>

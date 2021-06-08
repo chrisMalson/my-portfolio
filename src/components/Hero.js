@@ -36,8 +36,8 @@ const Hero = ({ headerVisible }) => {
     <div id="hero" className={background}>
       <div />
       <div className={textContainer}>
-        <Typography className={name} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>Chris Malson</Typography>
-        <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h3' : 'h5'}>web developer</Typography>
+        <Typography gutterBottom className={name} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>Chris Malson</Typography>
+        <Typography variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h3' : 'h5'}>{`{ web developer }`}</Typography>
       </div>
       <ContactButton />
       {!headerVisible ? <NavBar /> : <div></div>}

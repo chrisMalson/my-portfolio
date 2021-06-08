@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
   buttons: {
     display: 'flex',
     flexDirection: 'row',
+    padding: '1.5em',
     justifyContent: 'flex-end',
     width: '100%'
   },
@@ -43,8 +44,7 @@ const useStyles = makeStyles(theme => ({
     },
     justifyContent: 'space-between',
     margin: '1em 0',
-    padding: '0.5em',
-    height: '500px',
+    minHeight: '400px',
     width: '80vw'
   },
   content: {
@@ -67,8 +67,7 @@ const useStyles = makeStyles(theme => ({
   },
   siteName: {
     background: `linear-gradient(${theme.palette.common.black}4 90%, transparent)`,
-    margin: '-0.2em',
-    padding: '0.125em'
+    padding: '0.5em 0'
   }
 }));
 
@@ -94,7 +93,7 @@ const ProjectCard = ({ name, technologies, imgSrc, siteUrl, repoUrl }) => {
         ))}
       </List>
       <div className={buttons}>
-        <Button className={buttonOuter} color="secondary" variant="contained" target="_blank" href={siteUrl}>
+        <Button fullWidth className={buttonOuter} color="secondary" variant="contained" target="_blank" href={siteUrl}>
           <div className={buttonInner}>
             <Icon className={buttonIcon}>
               <OpenInNewIcon />
@@ -102,7 +101,7 @@ const ProjectCard = ({ name, technologies, imgSrc, siteUrl, repoUrl }) => {
           <Typography>site</Typography>
           </div>
         </Button>
-        <Button variant="contained" target="_blank" href={repoUrl}>
+        <Button fullWidth variant="contained" target="_blank" href={repoUrl}>
         <div className={buttonInner}>
             <Icon className={buttonIcon}>
               <GitHubIcon />

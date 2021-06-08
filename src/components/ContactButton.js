@@ -19,11 +19,14 @@ const useStyles = makeStyles({
   },
   text: {
     padding: '1.5em'
+  },
+  input: {
+    marginBottom: '0.75em'
   }
 });
 
 const ContactButton = ({ mini, forFooter }) => {
-  const { form, icon, text } = useStyles();
+  const { form, icon, text, input } = useStyles();
   const [open, setOpen] = useState(false);
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState(`Hey Chris! Let's chat about...`)
@@ -52,7 +55,7 @@ const ContactButton = ({ mini, forFooter }) => {
         <SocialIcon className={icon} network="email" onClick={() => setOpen(true)} />
       ) : (
         <Button onClick={() => setOpen(true)} className={text} variant="contained" color="secondary">
-          <Typography variant={forFooter ? "h6" : "h4"}>
+          <Typography variant={forFooter ? "body1" : "h4"}>
             let's chat
           </Typography>
         </Button>
@@ -63,11 +66,12 @@ const ContactButton = ({ mini, forFooter }) => {
         maxWidth='md'
       >
         <DialogTitle>
-          <Typography>I'm looking forward to hearing from you!</Typography>
+          <Typography>I look forward to hearing from you!</Typography>
         </DialogTitle>
-        <DialogContent>
+        <DialogContent style={{ padding: '0 24px' }}>
           <form className={form}>
             <TextField
+              className={input}
               variant="outlined"
               size="small"
               placeholder="Your name/email"
@@ -75,6 +79,7 @@ const ContactButton = ({ mini, forFooter }) => {
               onChange={({ target: { value }}) => setSubject(value)}
             />
             <TextField
+              className={input}
               variant="outlined"
               multiline
               rows={5}

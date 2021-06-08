@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     top: '0.75em'
   },
   paper: {
+    borderRadius: '0',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

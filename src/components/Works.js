@@ -43,7 +43,7 @@ const Works = () => {
     <div id="works" className={background}>
       {useMediaQuery(theme.breakpoints.down('xs')) && <div style={{ height: '3em' }}></div>}
       <Typography className={title} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>where have I been?</Typography>
-      <Typography variant="h6" style={{ textAlign: 'center', padding: '0 0.5em' }} gutterBottom>some examples of what I've worked on:</Typography>
+      <Typography variant="h6" style={{ textAlign: 'center', padding: '0 0.5em' }} gutterBottom>here are some examples of my work:</Typography>
       <div className={cardList}>
         <ProjectCard
           name="A Game of Chance"

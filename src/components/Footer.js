@@ -8,6 +8,10 @@ import ResumeButton from './ResumeButton';
 const useStyles = makeStyles(theme => ({
   footer: {
     background: theme.palette.grey[700],
+    paddingTop: '1.5em',
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: '0'
+    }
   },
   inner: {
     alignItems: 'center',

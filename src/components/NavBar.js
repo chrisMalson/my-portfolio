@@ -25,9 +25,11 @@ const useStyles = makeStyles(theme => ({
   nav: {
     alignItems: 'center',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     width: '90%',
     [theme.breakpoints.up('sm')]: {
+      flexDirection: 'row',
       width: '75%'
     },
     [theme.breakpoints.up('md')]: {
@@ -35,12 +37,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   text: {
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '1.25rem',
-    },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '1.5rem'
-    },
+    fontSize: '1.25rem',
     color: theme.palette.common.white,
     textAlign: 'center'
   }
@@ -56,6 +53,7 @@ const NavBar = ({ inDrawer }) => {
     <div className={inDrawer ? drawerNav : nav}>
       <Link
         className={button}
+        underline="always"
         onClick={() => handleNav('about')}
         onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
         onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}
@@ -65,6 +63,7 @@ const NavBar = ({ inDrawer }) => {
       <Divider orientation={inDrawer ? "horizontal" : "vertical"} />
       <Link
         className={button}
+        underline="always"
         onClick={() => handleNav('skills')}
         onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
         onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}
@@ -74,6 +73,7 @@ const NavBar = ({ inDrawer }) => {
       <Divider orientation={inDrawer ? "horizontal" : 'vertical'} />
       <Link
         className={button}
+        underline="always"
         onClick={() => handleNav('works')}
         onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
         onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}

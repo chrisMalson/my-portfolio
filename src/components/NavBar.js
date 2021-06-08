@@ -14,6 +14,14 @@ const useStyles = makeStyles(theme => ({
       transition: 'border-color 0.5s'
     }
   },
+  drawerNav: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    justifyContent: 'space-around',
+    padding: '2em'
+  },
   nav: {
     alignItems: 'center',
     display: 'flex',
@@ -38,14 +46,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const NavBar = () => {
-  const { button, nav, text } = useStyles();
+const NavBar = ({ inDrawer }) => {
+  const { button, drawerNav, nav, text } = useStyles();
   const theme = useTheme();
 
   const handleNav = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   
   return (
-    <div className={nav}>
+    <div className={inDrawer ? drawerNav : nav}>
       <Link
         className={button}
         onClick={() => handleNav('about')}
@@ -54,7 +62,7 @@ const NavBar = () => {
       >
         <Typography className={text}>who am I?</Typography>
       </Link>
-      <Divider orientation="vertical" />
+      <Divider orientation={inDrawer ? "horizontal" : "vertical"} />
       <Link
         className={button}
         onClick={() => handleNav('skills')}
@@ -63,7 +71,7 @@ const NavBar = () => {
       >
         <Typography className={text}>what do I do?</Typography>
       </Link>
-      <Divider orientation="vertical" />
+      <Divider orientation={inDrawer ? "horizontal" : 'vertical'} />
       <Link
         className={button}
         onClick={() => handleNav('works')}

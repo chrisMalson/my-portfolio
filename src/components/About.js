@@ -1,7 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { Typography, useMediaQuery } from '@material-ui/core';
+import { List, ListItem, ListItemIcon, Typography, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { SocialIcon } from 'react-social-icons';
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 
 import ContactButton from './ContactButton';
 import ResumeButton from './ResumeButton';
@@ -43,7 +44,10 @@ const useStyles = makeStyles(theme => ({
     }
   },
   description: {
-    padding: '0 2.5em',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: '3em',
+      padding: '0 2.5em',
+    }
   }
 }));
 
@@ -74,13 +78,28 @@ const About = () => {
         who am I?
       </Typography>
       <div className={info}>
+        <Typography variant="h6" style={{ textAlign: 'center', padding: '0 0.5em' }}>an aspiring developer whose primary goals are to:</Typography>
         <Typography className={description} variant="body1">
-          <span style={{ paddingLeft: '3rem' }}>an aspiring developer whose primary goals are to:</span>
-          <ul>
-            <li>explore my innate curiosity of programming and development</li>
-            <li>challenge myself and hone my craft</li>
-            <li>provide value to an increasingly online world</li>
-          </ul>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <ArrowRightAltIcon color="primary" />
+              </ListItemIcon>
+              <Typography>explore my innate curiosity of programming and development</Typography>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <ArrowRightAltIcon color="primary" />
+              </ListItemIcon>
+              <Typography>challenge myself and hone my craft</Typography>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <ArrowRightAltIcon color="primary" />
+              </ListItemIcon>
+              <Typography>provide value to an increasingly online world</Typography>
+            </ListItem>
+          </List>
         </Typography>
         <ResumeButton />
         <div className={iconContainer}>

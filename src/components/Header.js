@@ -1,5 +1,7 @@
-import { Link, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Link, Typography, useMediaQuery } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+
+import Hamburger from './Hamburger';
 
 import NavBar from './NavBar';
 
@@ -14,15 +16,11 @@ const useStyles = makeStyles(theme => ({
   inner: {
     alignItems: 'center',
     display: 'flex',
-    flexDirection: 'column',
     justifyContent: 'space-between',
     padding: `1.45rem 1.0875rem`,
     [theme.breakpoints.down('xs')]: {
       padding: '0.75rem'
     },
-    [theme.breakpoints.up('sm')]: {
-      flexDirection: 'row'
-    }
   },
   navContainer: {
     display: 'flex',
@@ -53,6 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 const Header = () => {
   const { header, inner, navContainer, text } = useStyles();
+  const theme = useTheme();
 
   return (
     <header className={header}>
@@ -66,9 +65,17 @@ const Header = () => {
             CM
           </Link>
         </Typography>
-        <div className={navContainer}>
-          <NavBar />
-        </div>
+        {useMediaQuery(theme.breakpoints.up('sm')) ?
+          (
+            <div className={navContainer}>
+              <NavBar />
+            </div>
+          ) : (
+            <Hamburger>
+              <NavBar inDrawer />
+            </Hamburger>
+          )
+        }
       </div>
     </header>
   );

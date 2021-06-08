@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-around',
     minHeight: '100vh',
-    paddingBottom: '4em'
+    paddingBottom: '2em'
   },
   cardList: {
     alignItems: 'center',
@@ -43,6 +43,7 @@ const Works = () => {
     <div id="works" className={background}>
       {useMediaQuery(theme.breakpoints.down('xs')) && <div style={{ height: '3em' }}></div>}
       <Typography className={title} variant={useMediaQuery(theme.breakpoints.up('sm')) ? 'h1' : 'h3'}>where have I been?</Typography>
+      <Typography variant="h6" style={{ textAlign: 'center', padding: '0 0.5em' }} gutterBottom>some examples of what I've worked on:</Typography>
       <div className={cardList}>
         <ProjectCard
           name="A Game of Chance"

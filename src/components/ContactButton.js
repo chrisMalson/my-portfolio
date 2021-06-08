@@ -1,10 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Link, Typography } from '@material-ui/core';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Input, TextField, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
-import ReactContactForm from 'react-mail-form';
 import { SocialIcon } from 'react-social-icons';
-import { LinearScale } from '@material-ui/icons';
 
 const useStyles = makeStyles({
   form: {
@@ -27,6 +25,8 @@ const useStyles = makeStyles({
 const ContactButton = ({ mini, forFooter }) => {
   const { form, icon, text } = useStyles();
   const [open, setOpen] = useState(false);
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState(`Hey Chris! Let's chat about...`)
 
   const {
     site: {
@@ -66,13 +66,34 @@ const ContactButton = ({ mini, forFooter }) => {
           <Typography>I'm looking forward to hearing from you!</Typography>
         </DialogTitle>
         <DialogContent>
-          <ReactContactForm
-            className={form}
-            to="chris@malson.dev"
-            titlePlaceholder='subject'
-            contentsPlaceholder='description'
-            buttonText='submit'
-          />
+          <form className={form}>
+            <TextField
+              variant="outlined"
+              size="small"
+              placeholder="Your name/email"
+              required
+              onChange={({ target: { value }}) => setSubject(value)}
+            />
+            <TextField
+              variant="outlined"
+              multiline
+              rows={5}
+              rowsMax={5}
+              defaultValue={message}
+              placeholder="What would you like to chat about?"
+              required
+              onChange={({ target: { value }}) => setMessage(value)}
+            />
+            <Button
+              variant="contained"
+              color="secondary"
+              type="submit"
+              href={`mailto:${email}?subject=${subject}&body=${message.replace(/\n/g, '%0D%0A')}`}
+              target="_blank"
+            >
+              submit message
+            </Button>
+          </form>
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>

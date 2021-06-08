@@ -65,6 +65,11 @@ const useStyles = makeStyles(theme => ({
   list: {
     alignSelf: 'center'
   },
+  siteName: {
+    background: `linear-gradient(${theme.palette.common.black}4 90%, transparent)`,
+    margin: '-0.2em',
+    padding: '0.125em'
+  }
 }));
 
 const ProjectCard = ({ name, technologies, imgSrc, siteUrl, repoUrl }) => {
@@ -89,7 +94,7 @@ const ProjectCard = ({ name, technologies, imgSrc, siteUrl, repoUrl }) => {
         ))}
       </List>
       <div className={buttons}>
-        <Button className={buttonOuter} variant="contained" target="_blank" href={siteUrl}>
+        <Button className={buttonOuter} color="secondary" variant="contained" target="_blank" href={siteUrl}>
           <div className={buttonInner}>
             <Icon className={buttonIcon}>
               <OpenInNewIcon />

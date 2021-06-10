@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   iconContainer: {
-    paddingBottom: '4em'
+    paddingBottom: '8em'
   },
   info: {
     display: 'flex',
@@ -39,6 +39,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center'
   },
   title: {
+    padding: '2em 0',
     [theme.breakpoints.down('xs')]: {
       padding: '3em 0 2em 0'
     }
@@ -48,7 +49,7 @@ const useStyles = makeStyles(theme => ({
       marginLeft: '3em',
       padding: '0 2.5em',
     }
-  }
+  },
 }));
 
 const About = () => {

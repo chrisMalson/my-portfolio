@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
       transition: 'color 0.5s'
     },
     color: `${theme.palette.common.white}`,
-    fontFamily: 'Rock Salt'
+    fontFamily: 'Rock Salt',
   },
 }));
 

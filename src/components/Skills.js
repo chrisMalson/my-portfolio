@@ -22,7 +22,8 @@ const useStyles = makeStyles(theme => ({
   info: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingBottom: '4em'
   },
   listContainerWrapper: {
     // backgroundColor: blue[200],

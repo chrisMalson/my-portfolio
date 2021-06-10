@@ -3,8 +3,12 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   button: {
-    borderBottom: `3px solid transparent`,
+    borderBottom: `2px solid ${theme.palette.common.white}`,
     cursor: 'pointer',
+    marginBottom: '1rem',
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: 0
+    },
     '&:hover': {
       borderColor: theme.palette.secondary.main,
       transition: 'border-color 0.5s'
@@ -56,7 +60,7 @@ const NavBar = ({ inDrawer }) => {
         underline="always"
         onClick={() => handleNav('about')}
         onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
-        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}
+        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = theme.palette.common.white, 500)}
       >
         <Typography className={text}>who am I?</Typography>
       </Link>
@@ -66,7 +70,7 @@ const NavBar = ({ inDrawer }) => {
         underline="always"
         onClick={() => handleNav('skills')}
         onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
-        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}
+        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = theme.palette.common.white, 500)}
       >
         <Typography className={text}>what do I do?</Typography>
       </Link>
@@ -76,7 +80,7 @@ const NavBar = ({ inDrawer }) => {
         underline="always"
         onClick={() => handleNav('works')}
         onTouchStart={(e) => e.target.parentElement.style.borderColor = theme.palette.secondary.main}
-        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = "transparent", 500)}
+        onTouchEnd={(e) => setTimeout(() => e.target.parentElement.style.borderColor = theme.palette.common.white, 500)}
       >
         <Typography className={text}>where have I been?</Typography>
       </Link>

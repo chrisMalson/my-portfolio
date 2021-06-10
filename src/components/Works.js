@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
       flexDirection: 'row'
     },
     justifyContent: 'space-around',
+    padding: '4em',
     width: '90%'
   },
   title: {
